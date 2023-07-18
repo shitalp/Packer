@@ -1,0 +1,24 @@
+{
+  "instance_info": {
+    "ami_name": "learn-packer-linux-aws",
+    "instance_type": "t3a.micro",
+    "region": "ap-south-1",
+    "source_ami_name": "al2023-ami-2023.1.20230705.0-kernel-6.1-x86_64",
+    "ssh_username": "ec2-user",
+    "tags": {
+      "map-migrated": "d-server-01w1643zlizp1x",
+      "Name": "dem-packer"
+    },
+    "packages": [
+      "yum-utils",
+      "tree"
+    ]
+  },
+  "build_commands": [
+    "sudo yum install -y yum-utils",
+    "sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo",
+    "sudo yum -y install packer"
+  ],
+  "user_commands": []
+}
+

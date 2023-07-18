@@ -1,0 +1,15 @@
+---
+- name: Provision instance
+  hosts: default
+  vars:
+    ansible_python_interpreter: /bin/python3
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Install packages
+      dnf:
+        name:
+          - tree
+          - wget
+        state: present
+
