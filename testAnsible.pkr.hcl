@@ -46,6 +46,7 @@ build {
   ]
   provisioner "shell" {
     inline = [
+      "sudo yum -y update",
       "sudo yum install -y python"
     ]
   }
