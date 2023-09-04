@@ -20,10 +20,25 @@ variable "user_commands" {
   default = []
 }
 
+variable "aws_access_key" {
+  description = "AWS Access Key ID"
+}
+
+variable "aws_secret_key" {
+  description = "AWS Secret Access Key"
+}
+
+variable "aws_session_token" {
+  description = "AWS Session Token"
+}
+
 source "amazon-ebs" "amazon-linux2" {
   ami_name              = var.instance_info.ami_name
   instance_type         = var.instance_info.instance_type
   region                = var.instance_info.region
+  access_key            = var.aws_access_key
+  secret_key            = var.aws_secret_key
+  token                 = var.aws_session_token
   force_deregister      = true
   force_delete_snapshot = true
   source_ami_filter {
