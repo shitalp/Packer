@@ -1,6 +1,6 @@
 {
   "instance_info": {
-    "ami_name": "learn-packer-linux-aws",
+    "ami_name": "learn1-packer-linux-aws",
     "instance_type": "t3a.micro",
     "region": "ap-south-1",
     "source_ami_name": "al2023-ami-2023.1.20230705.0-kernel-6.1-x86_64",
