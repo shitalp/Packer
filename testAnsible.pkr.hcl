@@ -39,8 +39,8 @@ source "amazon-ebs" "amazon-linux2" {
 #  access_key            = var.aws_access_key
 #  secret_key            = var.aws_secret_key
 #  token                 = var.aws_session_token
-  force_deregister      = true
-  force_delete_snapshot = true
+  //force_deregister      = true
+  //force_delete_snapshot = true
   //source_ami_filter {
     //filters = {
      // name                = var.instance_info.source_ami_name
@@ -49,7 +49,7 @@ source "amazon-ebs" "amazon-linux2" {
     //}
     //most_recent = true
     //owners      = ["137112412989"]
-  }
+  //}
   ssh_username = var.instance_info.ssh_username
   tags         = var.instance_info.tags
 }
