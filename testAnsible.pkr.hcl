@@ -32,15 +32,15 @@ variable "user_commands" {
 #  description = "AWS Session Token"
 #}
 
-//source "amazon-ebs" "amazon-linux2" {
-  //ami_name              = var.instance_info.ami_name
-  //instance_type         = var.instance_info.instance_type
-  //region                = var.instance_info.region
+source "amazon-ebs" "amazon-linux2" {
+  ami_name              = var.instance_info.ami_name
+  instance_type         = var.instance_info.instance_type
+  region                = var.instance_info.region
 #  access_key            = var.aws_access_key
 #  secret_key            = var.aws_secret_key
 #  token                 = var.aws_session_token
-  //force_deregister      = true
-  //force_delete_snapshot = true
+  force_deregister      = true
+  force_delete_snapshot = true
   //source_ami_filter {
     //filters = {
      // name                = var.instance_info.source_ami_name
@@ -50,15 +50,15 @@ variable "user_commands" {
     //most_recent = true
     //owners      = ["137112412989"]
   //}
-  //ssh_username = var.instance_info.ssh_username
-  //tags         = var.instance_info.tags
-//}
+  ssh_username = var.instance_info.ssh_username
+  tags         = var.instance_info.tags
+}
 
 build {
   name = "Build AMI"
-  //sources = [
-   // "source.amazon-ebs.amazon-linux2"
-  //]
+  sources = [
+    "source.amazon-ebs.amazon-linux2"
+]
   provisioner "shell" {
     inline = [
       "sudo yum -y update",
