@@ -40,7 +40,7 @@ source "amazon-ebs" "amazon-linux2" {
 #  secret_key            = var.aws_secret_key
 #  token                 = var.aws_session_token
   force_deregister      = true
-  force_delete_snapshot = true
+  force_delete_snapshot = false
   source_ami_filter {
     filters = {
       name                = var.instance_info.source_ami_name
