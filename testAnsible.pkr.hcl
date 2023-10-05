@@ -45,7 +45,6 @@ source "amazon-ebs" "amazon-linux2" {
     filters = {
       name                = var.instance_info.source_ami_name
       root-device-type    = "ebs"
-      virtualization-type = "hvm"
     }
     most_recent = false
     owners      = ["137112412989"]
@@ -56,9 +55,9 @@ source "amazon-ebs" "amazon-linux2" {
 
 build {
   name = "Build AMI"
-  //sources = [
-   // "source.amazon-ebs.amazon-linux2"
-//]
+  sources = [
+    "source.amazon-ebs.amazon-linux2"
+]
   provisioner "shell" {
     inline = [
       "sudo yum -y update",
