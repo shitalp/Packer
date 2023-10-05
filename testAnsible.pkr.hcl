@@ -33,7 +33,7 @@ variable "user_commands" {
 #}
 
 source "amazon-ebs" "amazon-linux2" {
-  ami_name              = var.instance_info.ami_name
+ // ami_name              = var.instance_info.ami_name
   instance_type         = var.instance_info.instance_type
   region                = var.instance_info.region
 #  access_key            = var.aws_access_key
