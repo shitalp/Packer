@@ -56,9 +56,9 @@ source "amazon-ebs" "amazon-linux2" {
 
 build {
   name = "Build AMI"
-  sources = [
-    "source.amazon-ebs.amazon-linux2"
-]
+  //sources = [
+   // "source.amazon-ebs.amazon-linux2"
+//]
   provisioner "shell" {
     inline = [
       "sudo yum -y update",
